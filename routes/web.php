@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/info', function () {
+    echo phpinfo();
+});
+Route::get('/reg','Login\LoginController@reg');
+Route::post('/reg_do','Login\LoginController@reg_do');
+Route::get('/login','Login\LoginController@login');
+Route::post('/login_do','Login\LoginController@login_do');
+Route::get('/center','Login\LoginController@center');
