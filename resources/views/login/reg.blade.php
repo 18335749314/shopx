@@ -373,15 +373,15 @@
 				<div class="row">
 					<form class="col s12" action="{{url('/reg_do')}}" method="post">
 						<div class="input-field">
-							<input type="text" class="validate" placeholder="NAME" required>
+							<input type="text" class="validate" name="user_name" placeholder="NAME" required>
 						</div>
 						<div class="input-field">
-							<input type="email" placeholder="EMAIL" class="validate" required>
+							<input type="email" placeholder="EMAIL" name="email" class="validate" required>
 						</div>
 						<div class="input-field">
-							<input type="password" placeholder="PASSWORD" class="validate" required>
+							<input type="password" placeholder="PASSWORD" name="pwd"  class="validate" required>
 						</div>
-						<div class="btn button-default">REGISTER</div>
+						<div class="btn button-default"> <button>REGISTER</button> </div>
 					</form>
 				</div>
 			</div>

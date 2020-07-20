@@ -26,19 +26,9 @@ class LoginController extends Controller
             echo "<script>alert('邮箱必填'); window.history.go(-1);</script>";
             die;
         }
-        if(empty($data['tel'])){
-            echo "<script>alert('手机号必填'); window.history.go(-1);</script>";
-            die;
-        }
+       
         if(empty($data['pwd'])){
             echo "<script>alert('密码必填'); window.history.go(-1);</script>";
-            die;
-        }
-        if(empty($data['pwd1'])){
-            echo "<script>alert('确认密码必填'); window.history.go(-1);</script>";
-            die;
-        }else if($data['pwd']!=$data['pwd1']){
-            echo "<script>alert('确认密码与密码不一致'); window.history.go(-1);</script>";
             die;
         }
 
@@ -52,17 +42,11 @@ class LoginController extends Controller
             echo "<script>alert('邮箱已存在'); window.history.go(-1);</script>";
             die;
         }
-        $tel = UserModel::where(['tel'=>$data['tel']])->first();
-        if($tel){
-            echo "<script>alert('手机号已存在'); window.history.go(-1);</script>";
-            die;
-        }
 
         $pwd = password_hash($data['pwd'], PASSWORD_BCRYPT);
         $userInfo = [
             'user_name'     => $data['user_name'],
             'email'         => $data['email'],
-            'tel'           => $data['tel'],
             'pwd'           => $pwd
         ];
         $res = UserModel::insertGetId($userInfo);
@@ -82,7 +66,7 @@ class LoginController extends Controller
     {
         $u = $request->input('u');
         $pwd = $request->input('pwd');
-        $res = UserModel::where(['user_name'=>$u])->orWhere(['email'=>$u])->orWhere(['tel'=>$u])->first();
+        $res = UserModel::where(['user_name'=>$u])->orWhere(['email'=>$u])->first();
         if($res == NULL){
             echo "<script>alert('用户不存在,请先注册用户!');location='/reg'</script>";
         }

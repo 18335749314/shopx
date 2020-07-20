@@ -373,10 +373,10 @@
 				<div class="row">
 					<form class="col s12" action="{{url('/login_do')}}" method="post">
 						<div class="input-field">
-							<input type="text" class="validate" name="u_name" placeholder="USERNAME" required>
+							<input type="text" class="validate" name="user_name" placeholder="USERNAME" required>
 						</div>
 						<div class="input-field">
-							<input type="password" class="validate" name="u_pwd" placeholder="PASSWORD" required>
+							<input type="password" class="validate" name="pwd" placeholder="PASSWORD" required>
 						</div>
 						<a href=""><h6>Forgot Password ?</h6></a>
 						<a href="" class="btn button-default">LOGIN</a>
