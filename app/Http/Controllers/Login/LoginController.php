@@ -78,7 +78,7 @@ class LoginController extends Controller
             echo "<script>alert('密码不正确,请重新输入...');window.history.go(-1);</script>";
         }
 
-    }
+    } 
     
     //个人中心
     public function center(Request $request)
