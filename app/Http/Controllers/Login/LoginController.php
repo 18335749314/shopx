@@ -80,19 +80,97 @@ class LoginController extends Controller
 
     } 
     
-    //个人中心
-    public function center(Request $request)
-    {
-        // $data = $request->session()->all();
-        // print_r($data);
-        $res = UserModel::where(['uid'=>session('uid')])->first();
 
-        if(session()->has('uid')){
-            return view('login.center',['data'=>$res]);
-        }else{
-            echo "<script>alert('请先登录');location='/login'</script>";
-        }
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    // //个人中心
+    // public function center(Request $request)
+    // {
+    //     // $data = $request->session()->all();
+    //     // print_r($data);
+    //     $res = UserModel::where(['uid'=>session('uid')])->first();
+
+    //     if(session()->has('uid')){
+    //         return view('login.center',['data'=>$res]);
+    //     }else{
+    //         echo "<script>alert('请先登录');location='/login'</script>";
+    //     }
+    // }
 
 
 
